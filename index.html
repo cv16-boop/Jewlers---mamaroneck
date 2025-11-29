@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goldstein & Sons Fine Jewelers - Mamaroneck, NY - Since 1972</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #1a1a1a;
+            --gold: #D4AF37;
+            --text-gold: #f0e68c;
+            --accent: #333;
+        }
+        body { margin: 0; font-family: 'Roboto', sans-serif; background: var(--bg-color); color: var(--text-gold); line-height: 1.6; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; color: var(--gold); }
+        header { background: rgba(0,0,0,0.8); padding: 1rem; position: fixed; width: 100%; top: 0; z-index: 10; }
+        nav ul { list-style: none; margin: 0; padding: 0; display: flex; justify-content: center; }
+        nav li { margin: 0 1rem; }
+        nav a { color: var(--gold); text-decoration: none; font-weight: bold; transition: color 0.3s; }
+        nav a:hover { color: var(--text-gold); }
+        section { padding: 5rem 2rem; min-height: 100vh; text-align: center; }
+        #home { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://source.unsplash.com/1600x900/?antique,jewelry'); background-size: cover; color: white; display: flex; align-items: center; justify-content: center; }
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem; }
+        .gallery img { width: 100%; height: 300px; object-fit: cover; border: 2px solid var(--gold); transition: transform 0.3s; cursor: pointer; position: relative; overflow: hidden; }
+        .gallery img:hover { transform: scale(1.05); }
+        .sparkle { position: absolute; top: 10px; right: 10px; color: var(--gold); animation: sparkle 2s infinite; }
+        @keyframes sparkle { 0%, 100% { opacity: 0; } 50% { opacity: 1; } }
+        .filters { margin: 2rem 0; }
+        .filters button { background: var(--accent); color: var(--gold); border: 1px solid var(--gold); padding: 0.5rem 1rem; margin: 0 0.5rem; cursor: pointer; }
+        .filters button.active { background: var(--gold); color: var(--bg-color); }
+        form { max-width: 500px; margin: 2rem auto; text-align: left; }
+        input, textarea, button { width: 100%; padding: 0.75rem; margin: 0.5rem 0; border: 1px solid var(--gold); background: var(--accent); color: var(--text-gold); }
+        button { background: var(--gold); color: var(--bg-color); cursor: pointer; }
+        #map { height: 400px; width: 100%; margin: 2rem 0; }
+        .hidden { display: none; }
+        footer { background: var(--accent); padding: 1rem; text-align: center; }
+        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } section { padding: 3rem 1rem; } }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#collections">Collections</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#booking">Book</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <div>
+            <h1>Goldstein & Sons Fine Jewelers</h1>
+            <p>Timeless Elegance Since 1972 • Mamaroneck, NY</p>
+            <a href="#collections" style="color: var(--gold); font-size: 1.2rem; text-decoration: none;">Explore Our Vault</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>Our Story</h2>
+        <p>Founded in 1972 by Elias Goldstein, a master craftsman from the old world, our family-owned store in Mamaroneck has been a pillar of Westchester's jewelry scene for over 50 years. We specialize in antique restorations and custom heirlooms that tell your love story.</p>
+    </section>
+
+    <section id="collections">
+        <h2>Collections</h2>
+        <div class="filters">
+            <button class="active" data-filter="all">All</button>
+            <button data-filter="rings">Engagement Rings</button>
+            <button data-filter="bands">Wedding Bands</button>
+            <button data-filter="antique">Antique & Estate</button>
+            <button data-filter="watches">Watches</button>
+            <button data-filter="custom">Custom Design</button>
+        </div>
+        <div class="gallery" id="gallery">
+            <div class="item rings"><img src="https://source.unsplash.com/300x300/?diamond,ring" alt="Engagement Ring"><i class="fas fa-gem sparkle">✦</i></div>
+            <div class="item bands"><img src="https://source.unsplash.com/300x300/?wedding,band" alt="Wedding Band"><i class="fas fa-gem sparkle">✦</i></div>
+            <div class="item antique"><img src="https://source.unsplash.com/300x300/?antique,jewelry" alt="Antique Piece"><i class="fas fa-gem sparkle">✦</i></div>
+            <div class="item watches"><img src="https://source.unsplash.com/300x300/?vintage,watch" alt="Vintage Watch"><i class="fas fa-gem sparkle">✦</i></div>
+            <div class="item custom"><img src="https://source.unsplash.com/300x300/?custom,jewelry" alt="Custom Design"><i class="fas fa-gem sparkle">✦</i></div>
+            <div class="item rings"><img src="https://source.unsplash.com/300x300/?gold,ring" alt="Gold Ring"><i class="fas fa-gem sparkle">✦</i></div>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem;">
+            <div><i class="fas fa-tools" style="font-size: 3rem; color: var(--gold);"></i><h3>Repair</h3><p>Expert restoration of heirlooms.</p></div>
+            <div><i class="fas fa-search-dollar" style="font-size: 3rem; color: var(--gold);"></i><h3>Appraisal</h3><p>Professional valuations.</p></div>
+            <div><i class="fas fa-magic" style="font-size: 3rem; color: var(--gold);"></i><h3>Engraving</h3><p>Personal touches that last.</p></div>
+            <div><i class="fas fa-palette" style="font-size: 3rem; color: var(--gold);"></i><h3>Custom Design</h3><p>Your vision, our craft.</p></div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>123 Main Street, Mamaroneck, NY 10543 • (914) 555-01972</p>
+        <div id="map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3025.069999999999!2d-73.732!3d40.959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2a7f0f0f0f0f0%3A0x0!2sMamaroneck%2C%20NY!5e0!3m2!1sen!2sus!4v1630000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
+        <form action="https://formspree.io/f/YOUR_ID" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Inquiry</button>
+        </form>
+    </section>
+
+    <section id="booking">
+        <h2>Book an Appointment</h2>
+        <p>Schedule a consultation for repairs, appraisals, or custom designs.</p>
+        <iframe src="https://cal.com/your-free-calendar/embed?height=600&theme=dark" width="100%" height="600" frameborder="0"></iframe> <!-- Replace with your free Cal.com embed after signing up -->
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Goldstein & Sons. All rights reserved. | Crafted with care in Mamaroneck.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault(); document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Gallery filters
+        const filters = document.querySelectorAll('.filters button');
+        const items = document.querySelectorAll('.gallery .item');
+        filters.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filters.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.dataset.filter;
+                items.forEach(item => {
+                    if (filter === 'all' || item.classList.contains(filter)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Sparkle animation (already in CSS, but JS for random timing)
+        document.querySelectorAll('.sparkle').forEach(el => {
+            el.style.animationDelay = Math.random() * 2 + 's';
+        });
+    </script>
+</body>
+</html>
